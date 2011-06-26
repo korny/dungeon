@@ -1,0 +1,61 @@
+# ambient component multiplied with the light source's ambient component
+ambient:
+  red:   1.0
+  green: 1.0
+  blue:  1.0
+  alpha: 1.0
+
+# diffuse component multiplied with the light source's diffuse component
+diffuse:
+  red:   1.0
+  green: 1.0
+  blue:  1.0
+  alpha: 1.0
+
+# specular component multiplied with the light source's specular component
+specular:
+  red:   1.0
+  green: 1.0
+  blue:  1.0
+  alpha: 1.0
+
+shininess: 30
+
+layers:
+  # remove Lighting to conserve video memory if you don't need/want support for light sources
+  - type: Lighting
+
+
+  - type: Texture
+    colorspace_conversion: true
+    wrap_t: GL_REPEAT
+    generate_mipmap: true
+    flip_y: false
+    format: GL_RGBA
+    data_type: GL_UNSIGNED_BYTE
+    mag_filter: GL_LINEAR
+    min_filter: GL_LINEAR
+    scale_x: 1.0
+    scale_y: 1.0
+    path: /images/rock.png
+    premultiply_alpha: false
+    wrap_s: GL_REPEAT
+    mipmap_hint: GL_DONT_CARE
+
+
+  - type: NormalMap
+    colorspace_conversion: true
+    wrap_t: GL_REPEAT
+    generate_mipmap: true
+    flip_y: false
+    format: GL_RGBA
+    data_type: GL_UNSIGNED_BYTE
+    mag_filter: GL_LINEAR
+    min_filter: GL_LINEAR
+    scale_x: 1.0
+    scale_y: 1.0
+    path: /images/rock_normal.png
+    premultiply_alpha: false
+    wrap_s: GL_REPEAT
+    mipmap_hint: GL_DONT_CARE
+
